@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <!-- ul is bullet points, ol is number list -->
+       <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+       </ul>
+    </nav>
+    <!-- Navigation Bar -->
+
+    <!-- Rowlet Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Hello!!</h2>
+            <p>This is Rowlet. Rowlet says hello :)</p>
+            <a href="https://pokemon.fandom.com/wiki/Rowlet" class="hero-button">Wikipedia</a>
+        </div>
+        <div class="hero-image">
+            <img src="rowlet.png" alt="rowlet">
+        </div>  
+    </section>
+    <!-- Rowlet Section -->
+
+    <!-- About Section -->
+    <section id="About" class="about">
+        <div class="about-content1">
+            <h3>So,</h3>
+            <h2>Who is Rowlet?</h2>
+            <p>Anxious but cuddly, Rowlet is a Pokemon from the Alolan Regions and is a Grass and Flying Type.
+                 He is known for his shocked, beady eyes and memes of his face.
+            </p>
+        </div>
+
+        <div class="about-content2">
+            <h2>Why is he here?</h2>
+            <p>To be honest, he doesn't know either and is looking for a way out. But for now, 
+                he's just gonna hoot about himself at you.
+            </p>
+        </div>
+    </section>
+    <!-- About Section -->
+
+    <!-- Carousel Section -->
+    <section class="carou-wrap">
+        <button class="carou-butt next" onclick="nextSlide()"> => </button>
+        <button class="carou-butt prev" onclick="prevSlide()"> <= </button>
+
+        <div class="carou-contain">
+            <div class="carou-track" id="carou-track">
+                <div class="carou-item"><img src="Img1.jpg" alt="Img1"></div>
+                <div class="carou-item"><img class="img2" src="Img2.jpg" alt="Img2"></div>
+                <div class="carou-item"><img src="Img3.jpg" alt="Img3"></div>
+                <div class="carou-item"><img src="Img4.jpg" alt="Img4"></div>
+                <div class="carou-item"><img src="Img5.jpg" alt="Img5"></div>
+                <div class="carou-item"><img src="Img6.jpg" alt="Img6"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Carousel Section -->
+
+
+    <!-- Blog Section -->
+     <section class = "arr">
+        <h2>All about Rowlet</h2>
+        <p>Rowlet wants to tell you more about him!! 
+            Below are different types of Rowlet-related information you can read.</p>
+            <!-- Card 1 -->
+            <div class = "card-container">
+                <div class = "card">
+                    <img src="Hoot1.jpg" alt="0o0">
+                    <h3>How to talk to him</h3>
+                    <p>Oh, you don't know what he's saying? Click here to learn how to learn his language and talk to him even more!!</p>
+                    <a href="#" class="btn">Hoot More</a>
+                </div>
+
+            <!-- Card 2 -->
+                <div class = "card">
+                    <img src="Hoot2.jpg" alt="0_0">
+                    <h3>Fun Facts about Rowlet</h3>
+                    <p>It likes to cuddle in small spaces! Learn more weird stuff about him here.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+
+            <!-- Card 3 -->
+                <div class = "card">
+                    <img src="decidu_waitno.jpg" alt="It's Rowlet!!">
+                    <h3>Rowlet Evolutions</h3>
+                    <p>Three Evolutions, Triple Hoots. Yes, he can grow.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+
+            </div>
+     </section>
+    <!-- Blog Section -->
+
+    <!-- Footer -->
+    <footer class = "footer">
+
+        <!-- Div -->
+        <div class = "footer-col">
+            <h3>Contact Us!</h3>
+            <p>name123@gmail.com</p>
+            <p>Lorem Ipsum Road</p>
+        </div>
+
+        <!-- Div -->
+        <div class = "footer-col">
+            <h3>All about Rowlet</h3>
+            <a href="">How to talk to him</a>
+            <a href="">Fun Facts about Rowlet</a>
+            <a href="">Rowlet Evolutions</a>
+        </div>
+
+        <!-- Div -->
+        <div class = "footer-col">
+            <h3>Menu</h3>
+            <a href="">Home</a>
+            <a href="#About">About</a>
+            <a href="">Contact</a>
+        </div>
+    </footer>
+    <!-- Footer -->
+
+    <!-- Javascript -->
+    <script>
+        //Variable
+        let currentSlide = 0;
+        const totalSlides = 6;
+        const visibleSlides = 3;
+
+        function updateCarou() {
+            const track = document.getElementById("carou-track");
+            const slideWidth = track.children[0].clientWidth;
+            track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+        }
+
+        //Function
+        function nextSlide() {
+            if (currentSlide < totalSlides - visibleSlides) {
+                currentSlide++;
+            } else {
+                currentSlide = 0;
+            }
+            updateCarou();
+            console.log(currentSlide); //basically print
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+            } else {
+                currentSlide = totalSlides - visibleSlides;
+            }
+            updateCarou();
+            console.log("nextSlide" + currentSlide);
+        }
+
+    </script>
+    <!-- Javascript -->
+</body>
+</html>
